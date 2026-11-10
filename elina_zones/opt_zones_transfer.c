@@ -151,7 +151,7 @@ opt_zones_t* opt_zones_meet_tcons_array(elina_manager_t* man,
   opt_zones_t *r = elina_generic_meet_intlinearize_tcons_array(man,destructive,o,array,
 						  ELINA_SCALAR_DOUBLE,
 						  ELINA_LINEXPR_INTLINEAR,
-						  &opt_zones_meet_lincons_array);
+						  (void* (*)(elina_manager_t*, bool, void*, elina_lincons0_array_t*))&opt_zones_meet_lincons_array);
   
   return r;
 }

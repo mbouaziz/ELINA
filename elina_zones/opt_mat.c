@@ -2183,7 +2183,7 @@ bool opt_zones_mat_add_lincons(opt_zones_internal_t * pr,opt_zones_mat_t *oz, un
 	
   //posix_memalign((void **)&temp1, 32, 2*dim*sizeof(double));
   //posix_memalign((void **)&temp2, 32, 2*dim*sizeof(double));
-  bool (*incr_closure)(opt_zones_mat_t * ,...);
+  bool (*incr_closure)(opt_zones_mat_t *, unsigned short int, unsigned short int);
   double size = n*n;
   //double sparsity = 1- ((double)(oz->nni)/size);
   

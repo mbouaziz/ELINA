@@ -762,7 +762,7 @@ opt_pk_array_t* opt_pk_meet_tcons_array(elina_manager_t* man, bool destructive, 
   opt_pk_array_t *op;
   op= elina_generic_meet_intlinearize_tcons_array(man,destructive,oa,array,
 						  ELINA_SCALAR_MPQ, ELINA_LINEXPR_LINEAR,
-						  &opt_pk_meet_lincons_array);
+						  (void* (*)(elina_manager_t*, bool, void*, elina_lincons0_array_t*))&opt_pk_meet_lincons_array);
   return op;
 }
 

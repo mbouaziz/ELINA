@@ -266,7 +266,7 @@ opt_oct_t* opt_oct_meet_tcons_array(elina_manager_t* man,
   return elina_generic_meet_intlinearize_tcons_array(man,destructive,o,array,
 						  ELINA_SCALAR_DOUBLE,
 						  ELINA_LINEXPR_INTLINEAR,
-						  &opt_oct_meet_lincons_array);
+						  (void* (*)(elina_manager_t*, bool, void*, elina_lincons0_array_t*))&opt_oct_meet_lincons_array);
 }
 
 opt_oct_t* opt_oct_assign_texpr_array(elina_manager_t* man,

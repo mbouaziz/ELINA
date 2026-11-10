@@ -2011,7 +2011,7 @@ bool opt_hmat_add_lincons(opt_oct_internal_t* pr, opt_oct_mat_t* oo, int intdim,
   //posix_memalign((void **)&temp1, 32, 2*dim*sizeof(double));
   //posix_memalign((void **)&temp2, 32, 2*dim*sizeof(double));
   
-  bool (*incr_closure)(opt_oct_mat_t * ,...);
+  bool (*incr_closure)(opt_oct_mat_t *, int, int, bool);
   double size = 2*dim*(dim+1);
   double sparsity = 1- ((double)(oo->nni)/size);
   
@@ -2917,7 +2917,7 @@ void opt_hmat_assign(opt_oct_internal_t* pr, opt_uexpr u, opt_oct_mat_t* oo, siz
 {
   size_t i,k;
   double *m = oo->mat;
-  bool (*incr_closure)(opt_oct_mat_t * ,...);
+  bool (*incr_closure)(opt_oct_mat_t *, int, int, bool);
   double size = 2*dim*(dim+1);
   double sparsity = 1- ((double)(oo->nni)/size);
   int count = oo->nni;
