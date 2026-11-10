@@ -142,6 +142,6 @@ int main(int argc, char **argv){
 	size_t nbcons = atoi(argv[2]);
 	man = zonotope_manager_alloc();
 	//test_join(dim,nbcons);
-    test_of_box();
+    test_dana();
 	elina_manager_free(man);
 }
